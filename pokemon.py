@@ -24,8 +24,8 @@ computer_pokemon = random_pokemon()
 print("Your Pokemon is number %i: %s. Your opponent's Pokemon is number %i: %s."  % (player_pokemon['id'], player_pokemon['name'], computer_pokemon['id'], computer_pokemon['name']))
 
 while True:
-    player_stat = input("Which stat would you like to use? (Height, weight, HP, attack, defense, or speed): ")
-    if player_stat.lower() == 'height' or player_stat.lower() == 'weight' or player_stat.lower() == 'hp' or player_stat.lower() == 'attack' or player_stat.lower() == 'defense' or player_stat.lower() == 'speed':
+    player_stat = input("Which stat would you like to use? (Height, weight, HP, attack, defense, or speed): ").lower()
+    if player_stat == 'height' or player_stat == 'weight' or player_stat == 'hp' or player_stat == 'attack' or player_stat == 'defense' or player_stat == 'speed':
        break
     else:
         print('Please choose one of the given stats.')
