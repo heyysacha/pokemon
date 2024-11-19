@@ -46,7 +46,6 @@ def play_round():
         else:
             print('Please choose one of the given stats.')
             continue
-            break
 
     print("Your %s was: %i, your opponent's %s was: %i." % (player_stat, player_pokemon[player_stat], player_stat, computer_pokemon[player_stat]))
 
