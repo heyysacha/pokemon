@@ -24,7 +24,7 @@ player_score = 0
 computer_score = 0
 
 def print_stats(player_pokemon):
-    print("Your Pokemon is number %i: %s."  % (player_pokemon['id'], player_pokemon['name']))
+    print("\nYour Pokemon is number %i: %s."  % (player_pokemon['id'], player_pokemon['name']))
     print("Height: %i" % (player_pokemon['height']))
     print("Weight: %i" % (player_pokemon['weight']))
     print("HP: %i" % (player_pokemon['hp']))
@@ -40,16 +40,16 @@ def play_round():
     global computer_score
 
     print_stats(player_pokemon)
-    print("Your opponent's Pokemon is number %i: %s." % (computer_pokemon['id'], computer_pokemon['name']))
+    print("\nYour opponent's Pokemon is number %i: %s." % (computer_pokemon['id'], computer_pokemon['name']))
 
     trade_choice = input("\nWould you like to trade your Pokémon for a new one? (yes/no): ").lower()
     if trade_choice in ['yes', 'y']:
         print("Trading your Pokémon...")
     player_pokemon = random_pokemon()
-    print("Your new Pokemon is number %i: %s." % (player_pokemon['id'], player_pokemon['name']))
+    print("\nYour new Pokemon is number %i: %s." % (player_pokemon['id'], player_pokemon['name']))
 
     print_stats(player_pokemon)
-    print("Your opponent's Pokemon is number %i: %s." % (computer_pokemon['id'], computer_pokemon['name']))
+    print("\nYour opponent's Pokemon is number %i: %s." % (computer_pokemon['id'], computer_pokemon['name']))
 
     while True:
         player_stat = input("Which stat would you like to use? (Height, weight, HP, attack, defense, or speed): ").lower()
@@ -59,7 +59,7 @@ def play_round():
             print('Please choose one of the given stats.')
             continue
 
-    print("Your %s was: %i, your opponent's %s was: %i." % (player_stat, player_pokemon[player_stat], player_stat, computer_pokemon[player_stat]))
+    print("\nYour %s was: %i, your opponent's %s was: %i." % (player_stat, player_pokemon[player_stat], player_stat, computer_pokemon[player_stat]))
 
     if player_pokemon[player_stat] > computer_pokemon[player_stat]:
         print("You win!")
