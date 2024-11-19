@@ -23,13 +23,7 @@ def random_pokemon():
 player_score = 0
 computer_score = 0
 
-def play_round():
-    player_pokemon = random_pokemon()
-    computer_pokemon = random_pokemon()
-
-    global player_score
-    global computer_score
-
+def print_stats(player_pokemon):
     print("Your Pokemon is number %i: %s."  % (player_pokemon['id'], player_pokemon['name']))
     print("Height: %i" % (player_pokemon['height']))
     print("Weight: %i" % (player_pokemon['weight']))
@@ -37,6 +31,15 @@ def play_round():
     print("Attack: %i" % (player_pokemon['attack']))
     print("Defense: %i" % (player_pokemon['defense']))
     print("Speed: %i" % (player_pokemon['speed']))
+
+def play_round():
+    player_pokemon = random_pokemon()
+    computer_pokemon = random_pokemon()
+
+    global player_score
+    global computer_score
+
+    print_stats(player_pokemon)
     print("Your opponent's Pokemon is number %i: %s." % (computer_pokemon['id'], computer_pokemon['name']))
 
     trade_choice = input("\nWould you like to trade your Pokémon for a new one? (yes/no): ").lower()
@@ -44,12 +47,9 @@ def play_round():
         print("Trading your Pokémon...")
     player_pokemon = random_pokemon()
     print("Your new Pokemon is number %i: %s." % (player_pokemon['id'], player_pokemon['name']))
-    print("Height: %i" % (player_pokemon['height']))
-    print("Weight: %i" % (player_pokemon['weight']))
-    print("HP: %i" % (player_pokemon['hp']))
-    print("Attack: %i" % (player_pokemon['attack']))
-    print("Defense: %i" % (player_pokemon['defense']))
-    print("Speed: %i" % (player_pokemon['speed']))
+
+    print_stats(player_pokemon)
+    print("Your opponent's Pokemon is number %i: %s." % (computer_pokemon['id'], computer_pokemon['name']))
 
     while True:
         player_stat = input("Which stat would you like to use? (Height, weight, HP, attack, defense, or speed): ").lower()
