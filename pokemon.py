@@ -4,7 +4,7 @@ import random
 print("Welcome to the Pokemon challenge!")
 
 def random_pokemon():
-    pokemon_number = random.randint(1,151)
+    pokemon_number = random.randint(1,1025)
     url = 'https://pokeapi.co/api/v2/pokemon/{}/'.format(pokemon_number)
     response = requests.get(url)
     pokemon = response.json()
@@ -38,6 +38,18 @@ def play_round():
     print("Defense: %i" % (player_pokemon['defense']))
     print("Speed: %i" % (player_pokemon['speed']))
     print("Your opponent's Pokemon is number %i: %s." % (computer_pokemon['id'], computer_pokemon['name']))
+
+    trade_choice = input("\nWould you like to trade your Pokémon for a new one? (yes/no): ").lower()
+    if trade_choice in ['yes', 'y']:
+        print("Trading your Pokémon...")
+    player_pokemon = random_pokemon()
+    print("Your new Pokemon is number %i: %s." % (player_pokemon['id'], player_pokemon['name']))
+    print("Height: %i" % (player_pokemon['height']))
+    print("Weight: %i" % (player_pokemon['weight']))
+    print("HP: %i" % (player_pokemon['hp']))
+    print("Attack: %i" % (player_pokemon['attack']))
+    print("Defense: %i" % (player_pokemon['defense']))
+    print("Speed: %i" % (player_pokemon['speed']))
 
     while True:
         player_stat = input("Which stat would you like to use? (Height, weight, HP, attack, defense, or speed): ").lower()
