@@ -40,15 +40,14 @@ def play_round():
     global computer_score
 
     print_stats(player_pokemon)
-    print("\nYour opponent's Pokemon is number %i: %s." % (computer_pokemon['id'], computer_pokemon['name']))
 
     trade_choice = input("\nWould you like to trade your Pokémon for a new one? (yes/no): ").lower()
     if trade_choice in ['yes', 'y']:
         print("Trading your Pokémon...")
-    player_pokemon = random_pokemon()
-    print("\nYour new Pokemon is number %i: %s." % (player_pokemon['id'], player_pokemon['name']))
+        player_pokemon = random_pokemon()
+        print("\nYour new Pokemon is number %i: %s." % (player_pokemon['id'], player_pokemon['name']))
+        print_stats(player_pokemon)
 
-    print_stats(player_pokemon)
     print("\nYour opponent's Pokemon is number %i: %s." % (computer_pokemon['id'], computer_pokemon['name']))
 
     while True:
